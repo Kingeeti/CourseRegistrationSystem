@@ -1,0 +1,553 @@
+/* Base Styles */
+:root {
+    --primary-color: #3a86ff;
+    --primary-dark: #2667cc;
+    --secondary-color: #ff006e;
+    --success-color: #38b000;
+    --danger-color: #d90429;
+    --warning-color: #ffbe0b;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --gray-color: #6c757d;
+    --gray-light: #e9ecef;
+    --gray-dark: #343a40;
+    --border-radius: 4px;
+    --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: #f5f5f5;
+  }
+  
+  a {
+    text-decoration: none;
+    color: var(--primary-color);
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: var(--transition);
+  }
+  
+  .btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--primary-dark);
+  }
+  
+  .btn-danger {
+    background-color: var(--danger-color);
+    color: white;
+  }
+  
+  .btn-danger:hover {
+    background-color: #b10022;
+  }
+  
+  .btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--gray-color);
+    color: var(--gray-color);
+  }
+  
+  .btn-outline:hover {
+    background-color: var(--gray-light);
+  }
+  
+  /* Forms */
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--gray-light);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+  }
+  
+  .form-group textarea {
+    height: 100px;
+    resize: vertical;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  /* Login Page */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .login-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .login-container h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+  }
+  
+  .tabs {
+    display: flex;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--gray-light);
+  }
+  
+  .tab-btn {
+    padding: 0.5rem 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--gray-color);
+    position: relative;
+  }
+  
+  .tab-btn.active {
+    color: var(--primary-color);
+    font-weight: 500;
+  }
+  
+  .tab-btn.active::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+  }
+  
+  .tab-content {
+    display: none;
+  }
+  
+  .tab-content.active {
+    display: block;
+  }
+  
+  /* Dashboard */
+  .dashboard-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .dashboard-header {
+    background-color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+  }
+  
+  .dashboard-header h1 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .user-info span {
+    font-weight: 500;
+  }
+  
+  .dashboard-content {
+    display: flex;
+    flex: 1;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: white;
+    padding: 1.5rem;
+    box-shadow: var(--box-shadow);
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 1.5rem;
+    overflow-y: auto;
+  }
+  
+  /* Student Dashboard */
+  .filter-group {
+    margin-bottom: 1rem;
+  }
+  
+  .courses-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .course-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1rem;
+    transition: var(--transition);
+    cursor: pointer;
+  }
+  
+  .course-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .course-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+  
+  .course-code {
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+  
+  .course-seats {
+    font-size: 0.9rem;
+    color: var(--gray-color);
+  }
+  
+  .course-title {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  
+  .course-info {
+    font-size: 0.9rem;
+    color: var(--gray-dark);
+  }
+  
+  .course-time {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--gray-color);
+  }
+  
+  /* Weekly Calendar */
+  .schedule-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .weekly-calendar {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+  }
+  
+  .time-labels {
+    display: grid;
+    grid-template-columns: 80px repeat(13, 1fr);
+    border-bottom: 1px solid var(--gray-light);
+  }
+  
+  .time-label {
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--gray-color);
+  }
+  
+  .day-label {
+    border-right: 1px solid var(--gray-light);
+  }
+  
+  .calendar-grid {
+    display: flex;
+  }
+  
+  .day-column {
+    flex: 1;
+    min-width: 0;
+    border-right: 1px solid var(--gray-light);
+  }
+  
+  .day-column:last-child {
+    border-right: none;
+  }
+  
+  .day-header {
+    padding: 0.5rem;
+    text-align: center;
+    font-weight: 500;
+    background-color: var(--gray-light);
+    border-bottom: 1px solid var(--gray-light);
+  }
+  
+  .day-slots {
+    position: relative;
+    height: 780px; /* 13 hours * 60px */
+  }
+  
+  .course-slot {
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius);
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .course-slot:hover {
+    opacity: 0.9;
+  }
+  
+  .course-slot-conflict {
+    background-color: var(--danger-color);
+  }
+  
+  .registered-courses {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1rem;
+  }
+  
+  .registered-courses h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+  
+  .registered-course-item {
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--gray-light);
+  }
+  
+  .registered-course-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    overflow-y: auto;
+  }
+  
+  .modal-content {
+    background-color: white;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 600px;
+    position: relative;
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--gray-color);
+  }
+  
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  /* Admin Dashboard */
+  .admin-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .nav-link {
+    display: block;
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    color: var(--gray-dark);
+    transition: var(--transition);
+  }
+  
+  .nav-link:hover {
+    background-color: var(--gray-light);
+  }
+  
+  .nav-link.active {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .admin-section {
+    display: none;
+  }
+  
+  .admin-section.active {
+    display: block;
+  }
+  
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .courses-list,
+  .students-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+  
+  .student-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .student-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .reports-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .report-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+  }
+  
+  .report-card h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+  
+  .report-results {
+    margin-top: 1rem;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  /* Time Slots */
+  .time-slot {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .time-slot select,
+  .time-slot input {
+    flex: 1;
+  }
+  
+  /* Loading */
+  .loading {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gray-color);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .dashboard-content {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      width: 100%;
+      padding: 1rem;
+    }
+  
+    .main-content {
+      padding: 1rem;
+    }
+  
+    .calendar-grid {
+      overflow-x: auto;
+    }
+  
+    .day-column {
+      min-width: 150px;
+    }
+  }
+  
+  

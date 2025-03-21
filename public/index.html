@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Registration System</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="login-container">
+      <h1>Course Registration System</h1>
+      
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="student">Student Login</button>
+        <button class="tab-btn" data-tab="admin">Admin Login</button>
+      </div>
+      
+      <div class="tab-content active" id="student-tab">
+        <form id="student-login-form">
+          <div class="form-group">
+            <label for="roll-number">Roll Number</label>
+            <input type="text" id="roll-number" name="rollNumber" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+      
+      <div class="tab-content" id="admin-tab">
+        <form id="admin-login-form">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Dashboard</title>
+    <script>
+        async function fetchCourses() {
+            let response = await fetch("/student/courses");
+            let courses = await response.json();
+            document.getElementById("courses").innerHTML = courses.map(course => `
+                <div>${course.name} - ${course.seats} seats left</div>
+            `).join("");
+        }
+        window.onload = fetchCourses;
+    </script>
+</head>
+<body>
+    <h1>Welcome, <%= student.name %></h1>
+    <h2>Your Courses</h2>
+    <ul>
+        <% student.enrolledCourses.forEach(course => { %>
+            <li><%= course.name %></li>
+        <% }) %>
+    </ul>
+    
+    <h2>Available Courses</h2>
+    <div id="courses"></div>
+</body>
+</html>
